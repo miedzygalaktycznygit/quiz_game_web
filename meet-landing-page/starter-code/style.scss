@@ -1,0 +1,485 @@
+
+@mixin fFlexbox($direction, $height, $width) {
+  display: flex;
+  flex-direction: $direction;
+  text-align: center;
+  justify-content: center;
+  height: $height;
+  width: $width;
+}
+
+@font-face {
+  font-family: 'my_font';
+  src: url(/fonts/Oswald-SemiBold.ttf);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  height: fit-content;
+  font-family: 'my_font', sans-serif;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+main {
+  height: 135rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .section1 {
+    @include fFlexbox(column, 67.5rem, 100%);
+
+    .logo {
+      @include fFlexbox(row, 25%, 100%);
+      .logo_holder {
+        margin-top: 5rem;
+      }
+    }
+
+    .section1_content {
+      @include fFlexbox(row, 40%, 100%);
+      .pictures {
+        @include fFlexbox(row, 100%, 100%);
+        column-gap: 40rem; 
+
+        .img1 {
+          @include fFlexbox(row, max-content, 25%);
+        }
+        .img3{
+          visibility: hidden;
+          position: absolute;
+          z-index: -1;
+        }
+        .img2 {
+          @include fFlexbox(row, max-content, 25%);
+          margin-top: 5rem;
+        }
+      }
+      .group_chat {
+        @include fFlexbox(column, max-content, 40%);
+        position: absolute;
+        gap: 4rem;
+        margin-top: 3rem;
+        min-width: 30rem;
+        .main_text {
+          @include fFlexbox(column, 70%, 100%);
+          h1 {
+            font-size: 4rem; 
+            margin-top: -1rem;
+            padding-inline: 6rem;
+            line-height: 4rem;
+            color: rgb(37, 40, 60);
+          }
+          p {
+            margin-top: 3rem;
+            font-size: 1.6rem; 
+            padding-inline: 3.5rem;
+            color: rgb(126, 122, 146);
+          }
+        }
+        .buttons {
+          @include fFlexbox(row, 35%, 100%);
+          gap: 2rem;
+
+          .button1 {
+            @include fFlexbox(row, 3.1rem, 25%);
+            background-color: rgb(111, 169, 185);
+            padding-top: 0.9rem;
+            color: rgb(255, 255, 255);
+            border-radius: 1.5rem;
+          }
+          .button1:hover{
+            background-color: rgb(81, 135, 150);
+          }
+          .button2 {
+            @include fFlexbox(row, 3.1rem, 20%);
+            background-color: rgb(133, 95, 180);
+            padding-top: 0.9rem;
+            color: white;
+            border-radius: 1.5rem;
+          }
+          .button2:hover{
+            background-color: rgb(109, 78, 146);
+          }
+        }
+      }
+    }
+
+    .pointer1 {
+      @include fFlexbox(column, 35%, 100%);
+      margin-top: 10rem;
+      align-items: center;
+      row-gap: -1rem;
+
+      .line {
+        width: 0.12rem;
+        height: 7rem;
+        background-color: rgba(110, 110, 110, 0.349);
+        margin-top: 1rem;
+      }
+      .circle1 {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        background-color: #ffffff;
+        border: 1px solid #d3d3d3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: #a0a0a0;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .section2 {
+    @include fFlexbox(column, 57.5rem, 100%);
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+
+    .images {
+      @include fFlexbox(row, 35%, 100%);
+      margin-top: 4rem;
+      gap: 2rem;
+      img {
+        width: 18%;
+        height: max-content;
+        border-radius: 1rem;
+      }
+    }
+
+    .description {
+      @include fFlexbox(row, 30rem, 45rem);
+      background-color: #ffffff;
+      margin-top: 3rem;
+      .main_text_2 {
+        @include fFlexbox(column, 100%, 100%);
+        gap: 3rem;
+
+        .niebieski {
+          text-transform: uppercase;
+          color: rgb(111, 169, 185);
+          font-size: 1.5rem;
+        }
+
+        h2 {
+          font-size: 4.5rem;
+          margin-top: -1rem;
+          padding-inline: 1rem;
+          line-height: 4rem;
+          color: rgb(37, 40, 60);
+        }
+        p {
+          font-size: 1.3rem;
+          padding-inline: 1rem;
+          color: rgb(126, 122, 146);
+        }
+      }
+    }
+
+    .pointer2 {
+      @include fFlexbox(column, 35%, 100%);
+      align-items: center;
+      row-gap: -1rem;
+      z-index: 10;
+      .line {
+        width: 0.12rem;
+        height: 7rem;
+        background-color: rgba(110, 110, 110, 0.349);
+        margin-top: 1rem;
+      }
+      .circle1 {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        background-color: #ffffff;
+        border: 1px solid #d3d3d3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: #a0a0a0;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .footer1 {
+    @include fFlexbox(row, 20rem, 100%);
+    background-color: rgba(111, 169, 185, 0.692);
+    .img5{
+      z-index: -1;
+      width: 100vw;
+      min-height: 20rem;
+    }
+    .img4{
+      display: none;
+    }
+    .img6{
+      display: none;
+    }
+    .footer_content{
+      @include fFlexbox(row, 20rem, 100%);
+      position: absolute;
+      z-index: 10;
+      padding-top: 7rem;
+      color: #ffffff;
+      .first_tetx{
+        @include fFlexbox(row, 50%, 35%);
+        text-align: left;
+        h2{
+          margin-top: -2rem;
+          font-size: 3rem;
+          padding-inline: 5rem;
+        }
+      }
+      .second_text{
+        @include fFlexbox(row, 50%, 35%);
+        text-align: left;
+        min-height: 10rem;
+        p{
+          padding-inline: 10rem;
+          font-size: 1.2rem;
+        }
+      }
+      .button3{
+        @include fFlexbox(row, 50%, 30%);
+        margin-top: 1rem;
+        .surface{
+          @include fFlexbox(row, 3.1rem, 9rem);
+          background-color: rgb(133, 95, 180);
+          padding-top: 0.9rem;
+          color: rgb(255, 255, 255);
+          border-radius: 1.5rem;
+        }
+        .surface:hover{
+          background-color: rgb(109, 78, 146);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 81.25rem){
+  main{   
+    height: 155rem;
+    .section1{
+      @include fFlexbox(column, 87.5rem, 100%);
+      .logo{
+        margin-bottom: 2rem;
+      }
+      .section1_content{
+        @include fFlexbox(row, 60%, 100%);
+        .pictures{
+          @include fFlexbox(row, 100%, 100%);
+          column-gap: 0rem;
+          .img3{
+            visibility: visible;
+            position: absolute;
+            z-index: 10;
+          }
+          .img1{
+            visibility: hidden;
+            position: absolute;
+            z-index: -1;
+          }
+          .img2{
+            visibility: hidden;
+            position: absolute;
+            z-index: -1;  
+          }
+        }
+        .group_chat{
+          @include fFlexbox(column, max-content, 40%);
+          margin-top: 20rem;
+        }
+      }
+      .pointer1{
+        margin-top: 30rem;
+      }
+    }
+    .footer1{
+      @include fFlexbox(row, 25rem, 100%);
+      .img4{
+        z-index: -1;
+        width: 100vw;
+        min-height: 25rem;
+        display: block;
+      }
+      .img5{
+        display: none;
+      }
+      .footer_content{
+        @include fFlexbox(column, 20rem, 100%);
+        row-gap: 3rem;
+        align-items: center;
+        .first_tetx{
+          @include fFlexbox(row, 10rem, 35%);
+          margin-top: -4rem;
+          h2{
+            margin-top: 0rem;
+            padding-inline: 0rem;
+          }
+        }
+        .second_text{
+          @include fFlexbox(row, 10%, 35%);
+
+          min-height: 3rem;
+          p{
+            padding-inline: 0rem;
+            font-size: 1.2rem;
+          }
+        }
+        .button3{
+          @include fFlexbox(row, 10%, 30%);
+          margin-top: 1rem;
+          .surface{
+            @include fFlexbox(row, 3.1rem, 9rem);
+            background-color: rgb(133, 95, 180);
+            padding-top: 0.9rem;
+            color: rgb(255, 255, 255);
+            border-radius: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 45.125rem){
+  body{
+    main{
+
+      height: 185rem;
+      .section1{
+        .section1_content{
+          .group_chat{
+            @include fFlexbox(column, max-content, 100vw);
+            align-items: center;
+            position: absolute;
+            gap: 0rem;
+            row-gap: 3rem;
+            margin-top: 13rem;
+            min-width: 0rem;
+            .main_text {
+              @include fFlexbox(column, 70%, 90%);
+              h1 {
+                font-size: 3.5rem; 
+                margin-top: 1rem;
+                line-height: 4rem;
+                padding-inline: 0rem;
+              }
+              p {
+                margin-top: 3rem;
+                font-size: 1.6rem; 
+                padding-inline: 0rem;        
+              }
+            }
+            .buttons {
+              @include fFlexbox(row, 35%, 90%);
+              gap: 2rem;
+              .button1 {
+                @include fFlexbox(row, 3.1rem, 35%);
+                background-color: rgb(111, 169, 185);
+                padding-top: 0.9rem;
+                color: rgb(255, 255, 255);
+                border-radius: 1.5rem;
+              }
+              .button2 {
+                @include fFlexbox(row, 3.1rem, 25%);
+                background-color: rgb(133, 95, 180);
+                padding-top: 0.9rem;
+                color: white;
+                border-radius: 1.5rem;
+              }
+            }
+          }
+        }
+        .pointer1{
+          @include fFlexbox(column, 35%, 100%);
+          margin-top: 7rem;
+          align-items: center;
+          row-gap: -1rem;
+        }
+      }
+      .section2{
+        @include fFlexbox(column, 87.5rem, 100%);
+        .images{
+          @include fFlexbox(row, fit-content, fit-content);
+          flex-wrap: wrap;
+          margin-top: 5rem;
+          img {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 1rem;
+          }
+        }
+        .description{
+          @include fFlexbox(row, max-content, 100%);
+          background-color: #ffffff;
+          margin-top: 3rem;
+          .main_text_2 {
+            @include fFlexbox(column, 100%, 100%);
+            gap: 3rem;
+    
+            .niebieski {
+              text-transform: uppercase;
+              color: rgb(111, 169, 185);
+              font-size: 1.5rem;
+            }
+    
+            h2 {
+              font-size: 4.5rem;
+              margin-top: -1rem;
+              padding-inline: 1rem;
+              line-height: 4rem;
+            }
+            p {
+              font-size: 1.3rem;
+              padding-inline: 1rem;
+            }
+          }
+        }
+      }
+      .footer1{
+        @include fFlexbox(row, fit-content,fit-content);
+        .img4{
+          display: none;
+        }
+        .img6{
+          display: block;
+          z-index: -1;
+        }
+        .footer_content{
+          .first_tetx{
+            @include fFlexbox(row, fit-content, fit-content);
+            padding-inline: 0rem;
+          }
+          .second_text{
+            @include fFlexbox(row, fit-content, fit-content);
+            padding-inline: 0rem;
+          }
+        }
+      }
+    }
+  }
+}
