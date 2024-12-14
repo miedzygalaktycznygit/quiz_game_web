@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "my-font";
+  src: url("/Fonts/SpaceMono-Bold.ttf");
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-family: "my-font";
+  background-color: hsl(185, 41%, 84%);
+  font-weight: 300;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#container {
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  flex-wrap: wrap;
+}
+#container #title {
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  width: 100vw;
+  height: 25vh;
+  align-items: flex-end;
+}
+#container #title h1 {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 10rem;
+  letter-spacing: 1rem;
+  padding-bottom: 1rem;
+  color: hsl(183, 100%, 15%);
+}
+#container main {
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  width: 100vw;
+  height: 75vh;
+}
+#container main #calculator {
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  width: 47rem;
+  height: 27rem;
+  background-color: hsl(0, 0%, 100%);
+  margin-top: 3rem;
+  border-radius: 1rem;
+  align-items: center;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+#container main #calculator #inputs {
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  width: 45%;
+  height: 90%;
+  border-radius: 1rem;
+  background-color: hsl(186, 14%, 43%);
+  flex-wrap: wrap;
+}
+#container main #calculator #results {
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  width: 45%;
+  height: 90%;
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 1rem;
+}/*# sourceMappingURL=style.css.map */
